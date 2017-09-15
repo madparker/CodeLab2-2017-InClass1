@@ -6,7 +6,9 @@ public class DailyNumberGenerator : NumberGenerator {
 
 	// Use this for initialization
 	void Start () {
-		Random.InitState(System.DateTime.Now.DayOfYear + 1);
+		int seed = System.DateTime.Now.Year * 1000 + System.DateTime.Now.DayOfYear;
+
+		Random.InitState(seed);
 	}
 
 }
